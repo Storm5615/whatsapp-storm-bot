@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "whatsapp-ai-bot",
-  "framework": "nodejs",
   "builds": [
     {
       "src": "index.js",
@@ -27,4 +26,4 @@
       "NODE_ENV": "production"
     }
   }
-} 
+}
