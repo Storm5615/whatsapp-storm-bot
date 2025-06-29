@@ -7,11 +7,11 @@ module.exports = {
     owners: process.env.OWNERS ? process.env.OWNERS.split(',') : [],
     
     // WhatsApp Settings
-    phoneNumber: process.env.PHONE_NUMBER || '',
+    phoneNumber: process.env.PHONE_NUMBER || '2347061899020',
     
     // Database
     mongodb: {
-        uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/whatsapp-bot'
+        uri: process.env.MONGODB_URI || 'mongodb+srv://Storm:<db_password>@atlascluster.3vvqdkk.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster'
     },
     
     // AI Configuration
@@ -31,7 +31,7 @@ module.exports = {
     // Features
     features: {
         stickerWatermark: process.env.STICKER_WATERMARK || 'Storm Bot',
-        autoReply: process.env.AUTO_REPLY === 'true',
+        autoReply: process.env.AUTO_REPLY === 'false',
         welcomeMessage: process.env.WELCOME_MESSAGE || 'Hello! I\'m Storm Bot, your AI assistant. Type .help for commands.'
     },
     
