@@ -5,7 +5,11 @@
   "builds": [
     {
       "src": "index.js",
-      "use": "@vercel/node@3.0.0"
+      "use": "@vercel/node@3.0.0",
+      "config": {
+        "maxDuration": 30,
+        "memory": 1024
+      }
     }
   ],
   "routes": [
@@ -16,12 +20,6 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  },
-  "functions": {
-    "index.js": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
   },
   "regions": ["iad1"],
   "build": {

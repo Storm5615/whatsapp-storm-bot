@@ -7,11 +7,11 @@ module.exports = {
     owners: process.env.OWNERS ? process.env.OWNERS.split(',') : [],
     
     // WhatsApp Settings
-    phoneNumber: process.env.PHONE_NUMBER || '2347061899020',
+    phoneNumber: process.env.PHONE_NUMBER || '',
     
     // Database
     mongodb: {
-        uri: process.env.MONGODB_URI || 'mongodb+srv://Storm:<db_password>@atlascluster.3vvqdkk.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster'
+        uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/whatsapp-bot'
     },
     
     // AI Configuration
