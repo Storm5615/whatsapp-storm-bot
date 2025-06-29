@@ -1,10 +1,11 @@
 {
   "version": 2,
   "name": "whatsapp-ai-bot",
+  "framework": "nodejs",
   "builds": [
     {
       "src": "index.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node@3.0.0"
     }
   ],
   "routes": [
@@ -18,7 +19,14 @@
   },
   "functions": {
     "index.js": {
-      "maxDuration": 30
+      "maxDuration": 30,
+      "memory": 1024
+    }
+  },
+  "regions": ["iad1"],
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
     }
   }
 } 

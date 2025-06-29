@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "A powerful WhatsApp bot with AI capabilities, security, and advanced features",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build": "echo 'No build step required'",
     "deploy": "vercel --prod",
+    "vercel-build": "echo 'Build completed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["whatsapp", "bot", "ai", "automation", "security", "sticker", "media"],
+  "keywords": ["whatsapp", "bot", "ai", "automation", "security", "sticker", "media", "nodejs", "express"],
   "author": "Your Name",
   "license": "MIT",
   "dependencies": {
@@ -45,7 +48,8 @@
     "prettier": "^3.1.1"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   },
   "repository": {
     "type": "git",
