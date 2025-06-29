@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["whatsapp", "bot", "ai", "automation", "security", "sticker", "media", "nodejs", "express"],
-  "author": "Your Name",
+  "author": "Oluwaseun",
   "license": "MIT",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.6.0",
