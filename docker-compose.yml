@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  whatsapp-bot:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/whatsapp-bot
+      - BOT_NAME=WhatsApp AI Bot
+      - BOT_PREFIX=!
+      - OWNERS=your-phone-number@c.us
+      - AI_API_KEY=your-openai-api-key
+      - JWT_SECRET=your-jwt-secret-key
+    volumes:
+      - ./logs:/app/logs
+      - ./session:/app/session
+      - ./public/uploads:/app/public/uploads
+    depends_on:
+      - mongo
+    restart: unless-stopped
+    networks:
+      - bot-network
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=whatsapp-bot
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+    restart: unless-stopped
+    networks:
+      - bot-network
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - whatsapp-bot
+    restart: unless-stopped
+    networks:
+      - bot-network
+
+volumes:
+  mongo_data:
+
+networks:
+  bot-network:
+    driver: bridge 
