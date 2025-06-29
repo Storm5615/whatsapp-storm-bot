@@ -8,8 +8,8 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build": "echo 'No build step required'",
+    "vercel-build": "npm install --legacy-peer-deps && echo 'Build completed'",
     "deploy": "vercel --prod",
-    "vercel-build": "echo 'Build completed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["whatsapp", "bot", "ai", "automation", "security", "sticker", "media", "nodejs", "express"],
@@ -48,7 +48,7 @@
     "prettier": "^3.1.1"
   },
   "engines": {
-    "node": ">=16.0.0",
+    "node": "18.x",
     "npm": ">=8.0.0"
   },
   "repository": {
